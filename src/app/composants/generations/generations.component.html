@@ -1,9 +1,23 @@
 
-<p>Les différentes générations :</p>
-<br>
-<p *ngFor="let element of tabGenerations">
+<h1>Les différentes générations :</h1>
 
- {{element}}
-</p>
+
+<div *ngIf="tabGenerations">
+<ul *ngFor="let element of tabGenerations">
+
+  <li>{{element}}</li>
+</ul>
+</div>
+<!--
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+
+<p>{{aujourdhui|date : 'shortDate'}}</p>
+<p>{{aujourdhui|date : 'shortTime'}}</p>
+<p>{{unChiffre|number: '2.3-5'}}</p>
+<p>{{unObjet|json}}</p>
+-->
+
 
 

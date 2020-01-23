@@ -1,1 +1,30 @@
-<p></p>
+<h1>Dans l'ordre du Pokedex avec {{pokemons.length}} pokemons</h1>
+
+<div *ngIf="pokemons">
+
+  <div class="row">
+    <div *ngFor="let element of pokemons" class="col-4">
+      <div class="col-8">
+
+        <h3>{{element.nom}}</h3>
+        <img src="{{image}}{{element.id}}.png">
+        <p>{{element.categorie}}</p>
+        <p>Type :
+          <span *ngFor="let t of element.type; let dernier = last">
+        <span>{{t}}</span>
+        <span *ngIf="!dernier">,</span>
+
+      </span>
+
+        </p>
+        <p *ngIf="element.taille; else na">{{element.taille}} m</p>
+        <ng-template #na>N/A</ng-template>
+        <p *ngIf="element.poids; else na">{{element.poids}} kg</p>
+        <ng-template #na>N/A</ng-template>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
